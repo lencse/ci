@@ -18,7 +18,7 @@ class CodeCoverageTest extends \PHPUnit_Framework_TestCase
 
     public function testCoverage()
     {
-        $xml = new \SimpleXMLElement(file_get_contents($this->getCloverXmlFIle()));
+        $xml = new \SimpleXMLElement(file_get_contents($this->getCloverXmlFile()));
         $metrics = $xml->xpath('//metrics');
         $total = 0;
         $covered = 0;
@@ -42,7 +42,7 @@ class CodeCoverageTest extends \PHPUnit_Framework_TestCase
     /**
      * @return string
      */
-    private function getCloverXmlFIle()
+    private function getCloverXmlFile()
     {
         $options = $this->getArgOpts();
 

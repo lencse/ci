@@ -2,6 +2,10 @@
 
 namespace Lencse\Ci\Test\CodeCoverage;
 
+use GetOptionKit\Option;
+use GetOptionKit\OptionCollection;
+use GetOptionKit\OptionParser;
+
 class CodeCoverageTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -30,18 +34,50 @@ class CodeCoverageTest extends \PHPUnit_Framework_TestCase
      */
     private function getMinCoverage()
     {
-        global $argv;
+        $options = $this->getArgOpts();
 
-        return (int)$argv[2];
+        return $options['min-coverage']->value;
     }
 
     /**
-     * @return int
+     * @return string
      */
     private function getCloverXmlFIle()
     {
-        global $argv;
+        $options = $this->getArgOpts();
 
-        return $argv[3];
+        return $options['clover-file']->value;
+    }
+
+    /**
+     * @return Option[]
+     */
+    private function getArgOpts()
+    {
+        $specs = new OptionCollection();
+        $specs->add('c|min-coverage:', 'Minimum coverage')->isa('Number');
+        $specs->add('f|clover-file:', 'Clover XML output file')->isa('String');
+        $parser = new OptionParser($specs);
+
+        return $parser->parse($this->getTransformedArguments())->keys;
+    }
+
+    /**
+     * @return string[]
+     */
+    private function getTransformedArguments()
+    {
+        global $argv;
+        $result = [__FILE__];
+        $parsing = false;
+        foreach ($argv as $arg) {
+            if ($parsing) {
+                $result[] = $arg;
+            }
+            if ($arg == '--') {
+                $parsing = true;
+            }
+        }
+        return $result;
     }
 }

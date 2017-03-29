@@ -1,8 +1,12 @@
 {
-    "name": "lencse/ci",
+    "name": "lencse/ci-tools",
+    "version": "0.1",
     "description": "Continous integration devtools",
     "type": "library",
     "license": "MIT",
+    "bin": [
+        "bin/ci-test-coverage"
+    ],
     "authors": [
         {
             "name": "Levente Löki",
@@ -23,13 +27,20 @@
         }
     },
     "minimum-stability": "stable",
-    "require": {},
+    "require": {
+        "phpunit/phpunit": "~5.7",
+        "corneltek/getoptionkit": "^2.5"
+    },
     "require-dev": {
-        "phpunit/phpunit": "~5.7"
+        "squizlabs/php_codesniffer": "^2.8"
     },
     "scripts": {
         "test": [
             "./test/test.sh"
+        ],
+        "test-all": [
+            "./test/test.sh",
+            "./vendor/bin/phpcs --standard=PSR2 src test"
         ]
     }
 }

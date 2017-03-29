@@ -1,0 +1,35 @@
+{
+    "name": "lencse/ci",
+    "description": "Continous integration devtools",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Levente Löki",
+            "email": "leventeloki@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Lencse\\Ci\\": "./src/Lencse/Ci/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lencse\\Test\\Project1\\Test\\": "./test/project1/test/",
+            "Lencse\\Test\\Project1\\": "./test/project1/src/",
+            "Lencse\\Test\\Project2\\Test\\": "./test/project2/test/",
+            "Lencse\\Test\\Project2\\": "./test/project2/src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~5.7"
+    },
+    "scripts": {
+        "test": [
+            "./test/test.sh"
+        ]
+    }
+}

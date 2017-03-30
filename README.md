@@ -13,6 +13,8 @@ composer require lencse/ci-tools
 
 ## Usage
 
+### Checking code coverage
+
 ````bash
 # Create a Clover XML output of your project with PHPUnit
 phpunit --coverage-clover build/logs/clover.xml
@@ -20,13 +22,13 @@ phpunit --coverage-clover build/logs/clover.xml
 vendor/bin/ci-test-coverage --min-coverage 95 --clover-file build/logs/clover.xml
 ````
 
-### Integrating into composer.json
+#### Integrating into composer.json
 
 ````json
 {
     "scripts": {
         "test-all": [
-            "phpunit",
+            "phpunit --coverage-clover build/logs/clover.xml",
             "vendor/bin/ci-test-coverage --min-coverage 95 --clover-file build/logs/clover.xml"
         ]
     }
@@ -46,4 +48,4 @@ $ composer test
 
 ## License
 
-The MIT License (MIT). 
+The MIT License (MIT)

@@ -78,6 +78,7 @@ class CodeCoverageTest extends \PHPUnit_Framework_TestCase
                 $parsing = true;
             }
         }
+
         return $result;
     }
 }

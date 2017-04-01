@@ -1,6 +1,5 @@
 {
     "name": "lencse/ci-tools",
-    "version": "1.0.3",
     "description": "Continuous integration devtools",
     "type": "library",
     "license": "MIT",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "601fccfcfc87241f5be7bfc44f4465dc",
+    "content-hash": "b2aa8512014360fdfc978129222b36cb",
     "packages": [
         {
             "name": "corneltek/getoptionkit",

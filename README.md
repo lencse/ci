@@ -42,7 +42,7 @@ composer test-all
 ## Testing
 
 ``` bash
-$ composer test
+composer test
 ```
 
 

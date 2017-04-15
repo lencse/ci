@@ -5,8 +5,9 @@ namespace Lencse\Ci\Test\CodeCoverage;
 use GetOptionKit\Option;
 use GetOptionKit\OptionCollection;
 use GetOptionKit\OptionParser;
+use PHPUnit\Framework\TestCase;
 
-class CodeCoverageTest extends \PHPUnit_Framework_TestCase
+class CodeCoverageTest extends TestCase
 {
 
     public function setUp()

@@ -3,8 +3,9 @@
 namespace Lencse\Test\Project1\Test;
 
 use Lencse\Test\Project1\CoveredClass;
+use PHPUnit\Framework\TestCase;
 
-class CoveredClassTest extends \PHPUnit_Framework_TestCase
+class CoveredClassTest extends TestCase
 {
 
     public function testOne()

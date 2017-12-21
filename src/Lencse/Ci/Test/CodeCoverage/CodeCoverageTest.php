@@ -36,20 +36,14 @@ class CodeCoverageTest extends TestCase
         );
     }
 
-    /**
-     * @return int
-     */
-    private function getMinCoverage()
+    private function getMinCoverage(): int
     {
         $options = $this->getArgOpts();
 
         return $options['min-coverage']->value;
     }
 
-    /**
-     * @return string
-     */
-    private function getCloverXmlFile()
+    private function getCloverXmlFile(): string
     {
         $options = $this->getArgOpts();
 
@@ -59,7 +53,7 @@ class CodeCoverageTest extends TestCase
     /**
      * @return Option[]
      */
-    private function getArgOpts()
+    private function getArgOpts(): array
     {
         $specs = new OptionCollection();
         $specs->add('c|min-coverage:', 'Minimum coverage')->isa('Number');
@@ -72,7 +66,7 @@ class CodeCoverageTest extends TestCase
     /**
      * @return string[]
      */
-    private function getTransformedArguments()
+    private function getTransformedArguments(): array
     {
         global $argv;
         $result = [__FILE__];

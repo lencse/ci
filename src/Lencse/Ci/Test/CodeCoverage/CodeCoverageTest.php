@@ -27,7 +27,13 @@ class CodeCoverageTest extends TestCase
             $total += (int) $metric['elements'];
             $covered += (int) $metric['coveredelements'];
         }
-        $this->assertGreaterThanOrEqual($this->getMinCoverage(), $covered / $total * 100);
+        $percent = $covered / $total * 100;
+
+        $this->assertGreaterThanOrEqual(
+            $this->getMinCoverage(),
+            $percent,
+            sprintf('Code coverage is %.2f%%, (Minimum: %d%%)', $percent, $this->getMinCoverage())
+        );
     }
 
     /**

@@ -27,7 +27,7 @@
     },
     "require": {
         "php": ">=7.1.0",
-        "phpunit/phpunit": "^6.1",
+        "phpunit/phpunit": ">=6.1",
         "corneltek/getoptionkit": "^2.5"
     },
     "require-dev": {
